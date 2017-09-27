@@ -31,4 +31,4 @@
 
 # run command
 
-mpirun ~/bin/sss2/sss2_mpi CSBnB
+~/bin/sss2/sss2_mpi -omp 20 CSBnB
