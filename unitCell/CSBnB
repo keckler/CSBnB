@@ -37,3 +37,6 @@ set inventory all
 
 % --- criticality settings
 set pop 10000 300 20
+
+% --- set burn power
+set powdens 70.0
