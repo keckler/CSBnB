@@ -1,4 +1,4 @@
-mat unitCellMat sum burn 1
+mat unitCellMat sum burn 1 vol 8
     14030.06c 2.64887288736e-06
     74186.06c 7.85663900467e-06
     25055.06c 3.73826586479e-05

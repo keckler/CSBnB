@@ -121,6 +121,6 @@ for mat in matVolFrac.keys():
                 isotope2numDens[ZAI] = mat2el2frac[mat][element] * isoFrac[element][isotope] * mat2dens[mat] * AvNum * matVolFrac[mat] / float(isotope) / 1E24 #1/barn/cm
 
 fm = open('CSBnB_mburn','w')
-fm.write('mat unitCellMat sum burn 1\n')
+fm.write('mat unitCellMat sum burn 1 vol 8\n')
 for isotope in isotope2numDens.keys():
     fm.write('    '+isotope+'.06c '+str(isotope2numDens[isotope])+'\n')
