@@ -1,0 +1,39 @@
+%unit cell model of an assembly for the CSBnB core for calculations of neutron
+%excess curves. created on Sep 26 2017 by Chris Keckler
+
+% ################################################################################### //// ######## //// ####### 
+% ##################### Surfaces #################################################### //// ######## //// ####### 
+% ################################################################################### //// ######## //// ####### 
+
+surf unitCell cube 0 0 0 1
+
+% ################################################################################### //// ######## //// ####### 
+% ##################### Cells ####################################################### //// ######## //// ####### 
+% ################################################################################### //// ######## //// ####### 
+
+cell unitCell 0 unitCellMat -unitCell
+
+cell outer 0 outside unitCell
+
+% ################################################################################### //// ######## //// ####### 
+% ##################### Set options ################################################# //// ######## //// ####### 
+% ################################################################################### //// ######## //// #######
+
+% --- reflective boundary conditions on all sides
+set bc 2
+
+% --- include burnable materials
+include CSBnB_mburn
+
+% --- set data library locations
+set acelib "/global/home/groups/co_nuclear/serpent/xsdata_2/endfb7/sss_endfb7u.xsdata" %%% "/global/scratch/ckeckler/photon.xsdata"
+set declib "/global/home/groups/co_nuclear/serpent/xsdata_2/endfb7/sss_endfb7.dec"
+set nfylib "/global/home/groups/co_nuclear/serpent/xsdata_2/endfb7/sss_endfb7.nfy"
+%set pdatadir "/global/home/groups/co_nuclear/serpent/photon_data"
+
+% --- set depletion settings
+dep daystep 100 100 100 100 100 100 100 100 100 100
+set inventory all
+
+% --- criticality settings
+set pop 10000 300 20
